@@ -9,27 +9,29 @@ namespace COMP229_Lesson8.Controllers
     public class StoreController : Controller
     {
         // GET: Store
-        public string Index()
+        public ActionResult Index()
         {
-            return "This is my store index page!";
+            ViewBag.Message = "This is my store index page!";
+
+            return View();
         }
 
 
         // GET: Store/Browse?genre=Rock
-        public string Browse(string genre)
+        public ActionResult Browse(string genre)
         {
-            string message = HttpUtility.HtmlEncode("Store.Browse, Genre= " + genre);
+            ViewBag.Message = HttpUtility.HtmlEncode("Store.Browse, Genre= " + genre);
 
-            return message;
+            return View();
         }
 
 
         // GET: Store/Details/5
-        public string Details(int id)
+        public ActionResult Details(int id)
         {
-            string message = HttpUtility.HtmlEncode("Store.Details, ID= " + id);
+            ViewBag.Message = HttpUtility.HtmlEncode("Store.Details, ID= " + id);
 
-            return message;
+            return View();
         }
     }
 }
